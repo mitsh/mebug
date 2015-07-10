@@ -1,0 +1,2 @@
+# mebug
+Javascript console debug
