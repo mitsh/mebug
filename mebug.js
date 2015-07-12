@@ -37,7 +37,7 @@ function mebug(prefix)
 		}
 		else
 		{
-			var arguments_calle_name = arguments.callee.caller.toString().match(/mebug\([^\(\)]*\)\.(success|error|info|warn|debug)\(([^\(\)]*)\)/);
+			var arguments_calle_name = arguments.callee.caller.toString().match(/mebug\([^;]*?\)\.(success|error|info|warn|debug)\(([^;]*)\)/);
 			// arguments_calle_name[1] + ' ' +
 			console_message += arguments_calle_name[2];
 			if (arguments_calle_name[2][0] != '\'' && arguments_calle_name[2][0] == '"')
@@ -60,7 +60,7 @@ function mebug(prefix)
 		}
 		else
 		{
-			var arguments_calle_name = arguments.callee.caller.toString().match(/mebug\([^\(\)]*\)\.(success|error|info|warn|debug)\(([^\(\)]*)\)/);
+			var arguments_calle_name = arguments.callee.caller.toString().match(/mebug\([^;]*?\)\.(success|error|info|warn|debug)\(([^;]*)\)/);
 			// arguments_calle_name[1] + ' ' +
 			console_message += arguments_calle_name[2];
 			if (arguments_calle_name[2][0] != '\'' && arguments_calle_name[2][0] == '"')
@@ -83,7 +83,7 @@ function mebug(prefix)
 		}
 		else
 		{
-			var arguments_calle_name = arguments.callee.caller.toString().match(/mebug\([^\(\)]*\)\.(success|error|info|warn|debug)\(([^\(\)]*)\)/);
+			var arguments_calle_name = arguments.callee.caller.toString().match(/mebug\([^;]*?\)\.(success|error|info|warn|debug)\(([^;]*)\)/);
 			// arguments_calle_name[1] + ' ' +
 			console_message += arguments_calle_name[2];
 			if (arguments_calle_name[2][0] != '\'' && arguments_calle_name[2][0] == '"')
@@ -106,7 +106,7 @@ function mebug(prefix)
 		}
 		else
 		{
-			var arguments_calle_name = arguments.callee.caller.toString().match(/mebug\([^\(\)]*\)\.(success|error|info|warn|debug)\(([^\(\)]*)\)/);
+			var arguments_calle_name = arguments.callee.caller.toString().match(/mebug\([^;]*?\)\.(success|error|info|warn|debug)\(([^;]*)\)/);
 			// arguments_calle_name[1] + ' ' +
 			console_message += arguments_calle_name[2];
 			if (arguments_calle_name[2][0] != '\'' && arguments_calle_name[2][0] == '"')
@@ -129,7 +129,7 @@ function mebug(prefix)
 		}
 		else
 		{
-			var arguments_calle_name = arguments.callee.caller.toString().match(/mebug\([^\(\)]*\)\.(success|error|info|warn|debug)\(([^\(\)]*)\)/);
+			var arguments_calle_name = arguments.callee.caller.toString().match(/mebug\([^;]*?\)\.(success|error|info|warn|debug)\(([^;]*)\)/);
 			// arguments_calle_name[1] + ' ' +
 			console_message += arguments_calle_name[2];
 			if (arguments_calle_name[2][0] != '\'' && arguments_calle_name[2][0] == '"')
