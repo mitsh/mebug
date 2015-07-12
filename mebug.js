@@ -1,5 +1,5 @@
 /*
- Copyright (c) 2014-2015, Mustafa ÖZGÜR <root@mustafaozgur.com>
+ Copyright (c) 2014-2015, Mustafa OZGUR <root@mustafaozgur.com>
 
  Permission to use, copy, modify, and/or distribute this software for any
  purpose with or without fee is hereby granted, provided that the above
@@ -28,11 +28,22 @@ function mebug(prefix)
 
 	this.success = function (msg)
 	{
-		var console_message = '%c' + (this.prefix ? this.prefix + ' ' : '') + msg;
+		var console_message = '%c' + (this.prefix ? this.prefix + ' ' : ''), others = null;
 
 		if (arguments.length > 1)
 		{
-			var others = Array.prototype.slice.call(arguments, 1);
+			console_message += msg;
+			others = Array.prototype.slice.call(arguments, 1);
+		}
+		else
+		{
+			var arguments_calle_name = arguments.callee.caller.toString().match(/mebug\([^\(\)]*\)\.(success|error|info|warn|debug)\(([^\(\)]*)\)/);
+			// arguments_calle_name[1] + ' ' +
+			console_message += arguments_calle_name[2];
+			if (arguments_calle_name[2][0] != '\'' && arguments_calle_name[2][0] == '"')
+			{
+				others = arguments;
+			}
 		}
 
 		this._log('success', console_message, others);
@@ -40,11 +51,22 @@ function mebug(prefix)
 
 	this.error = function (msg)
 	{
-		var console_message = '%c' + (this.prefix ? this.prefix + ' ' : '') + msg;
+		var console_message = '%c' + (this.prefix ? this.prefix + ' ' : ''), others = null;
 
 		if (arguments.length > 1)
 		{
-			var others = Array.prototype.slice.call(arguments, 1);
+			console_message += msg;
+			others = Array.prototype.slice.call(arguments, 1);
+		}
+		else
+		{
+			var arguments_calle_name = arguments.callee.caller.toString().match(/mebug\([^\(\)]*\)\.(success|error|info|warn|debug)\(([^\(\)]*)\)/);
+			// arguments_calle_name[1] + ' ' +
+			console_message += arguments_calle_name[2];
+			if (arguments_calle_name[2][0] != '\'' && arguments_calle_name[2][0] == '"')
+			{
+				others = arguments;
+			}
 		}
 
 		this._log('error', console_message, others);
@@ -52,11 +74,22 @@ function mebug(prefix)
 
 	this.info = function (msg)
 	{
-		var console_message = '%c' + (this.prefix ? this.prefix + ' ' : '') + msg;
+		var console_message = '%c' + (this.prefix ? this.prefix + ' ' : ''), others = null;
 
 		if (arguments.length > 1)
 		{
-			var others = Array.prototype.slice.call(arguments, 1);
+			console_message += msg;
+			others = Array.prototype.slice.call(arguments, 1);
+		}
+		else
+		{
+			var arguments_calle_name = arguments.callee.caller.toString().match(/mebug\([^\(\)]*\)\.(success|error|info|warn|debug)\(([^\(\)]*)\)/);
+			// arguments_calle_name[1] + ' ' +
+			console_message += arguments_calle_name[2];
+			if (arguments_calle_name[2][0] != '\'' && arguments_calle_name[2][0] == '"')
+			{
+				others = arguments;
+			}
 		}
 
 		this._log('info', console_message, others);
@@ -64,11 +97,22 @@ function mebug(prefix)
 
 	this.warn = function (msg)
 	{
-		var console_message = '%c' + (this.prefix ? this.prefix + ' ' : '') + msg;
+		var console_message = '%c' + (this.prefix ? this.prefix + ' ' : ''), others = null;
 
 		if (arguments.length > 1)
 		{
-			var others = Array.prototype.slice.call(arguments, 1);
+			console_message += msg;
+			others = Array.prototype.slice.call(arguments, 1);
+		}
+		else
+		{
+			var arguments_calle_name = arguments.callee.caller.toString().match(/mebug\([^\(\)]*\)\.(success|error|info|warn|debug)\(([^\(\)]*)\)/);
+			// arguments_calle_name[1] + ' ' +
+			console_message += arguments_calle_name[2];
+			if (arguments_calle_name[2][0] != '\'' && arguments_calle_name[2][0] == '"')
+			{
+				others = arguments;
+			}
 		}
 
 		this._log('warn', console_message, others);
@@ -76,11 +120,22 @@ function mebug(prefix)
 
 	this.debug = function (msg)
 	{
-		var console_message = '%c' + (this.prefix ? this.prefix + ' ' : '') + msg;
+		var console_message = '%c' + (this.prefix ? this.prefix + ' ' : ''), others = null;
 
 		if (arguments.length > 1)
 		{
-			var others = Array.prototype.slice.call(arguments, 1);
+			console_message += msg;
+			others = Array.prototype.slice.call(arguments, 1);
+		}
+		else
+		{
+			var arguments_calle_name = arguments.callee.caller.toString().match(/mebug\([^\(\)]*\)\.(success|error|info|warn|debug)\(([^\(\)]*)\)/);
+			// arguments_calle_name[1] + ' ' +
+			console_message += arguments_calle_name[2];
+			if (arguments_calle_name[2][0] != '\'' && arguments_calle_name[2][0] == '"')
+			{
+				others = arguments;
+			}
 		}
 
 		this._log('debug', console_message, others);
@@ -110,7 +165,7 @@ function mebug(prefix)
 		}
 		else
 		{
-			console[log_func](console_message, style);
+			console[log_func](console_message, style, script_link);
 		}
 	};
 
